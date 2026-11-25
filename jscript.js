@@ -37,7 +37,7 @@ function addProduct() {
     return;
   }
 
-  // Normalize price to 2 decimal places so dataset matches displayed total
+  // rounding the price to 2 decimal places
   const formattedPrice = Math.round(price * 100) / 100;
 
   const li = document.createElement('li');
@@ -60,7 +60,7 @@ function addProduct() {
 
 addProductButton.addEventListener('click', addProduct);
 
-// Bonus: Allow pressing "Enter" in either input field to add the product
+// Allow pressing "Enter" in either of the input field to add the product
 [productNameInput, productPriceInput].forEach(input => {
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
